@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>leetcode 152 maximum product subarray</title>
+    <link href="/2024/11/29/leetcode-152-maximum-product-subarray/"/>
+    <url>/2024/11/29/leetcode-152-maximum-product-subarray/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给你一个整数数组 <code>nums</code> ，请你找出数组中乘积最大的非空连续<br>子数组<br>（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。</p><p>测试用例的答案是一个 <strong>32-位</strong> 整数。</p><blockquote><p><strong>输入:</strong> nums &#x3D; [2,3,-2,4]<br><strong>输出:</strong> 6<br><strong>解释:</strong> 子数组 [2,3] 有最大乘积 6。</p></blockquote><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>收到官方题解评论区的一位网友的启发，得到一个十分精妙的思路：</p><p>首先，乘积最大的数组，一定满足如下条件：</p><ul><li>其边缘一定为数组的边界或者是0。</li></ul><p>为什么？</p><p>使用反证法证明，如果一个乘积最大的数组，其两边的数均不为0，那这个数组一共会产生四种情况：</p><ul><li>左边为正数，右边为负数；那么这个数组乘以左边的数就一定会大于等于当前子数组的乘积，与假设矛盾。</li><li>右边为正数，左边为负数，和上一种情况一样。</li><li>左右均为正数。</li><li>左右均为负数，此时数组同时向左右两边扩展，得到的乘积也一定大于原本的数组，与假设矛盾。</li></ul><p>故我们可以知道，乘积最大的数组一定是从边界出发或者左右两端为0的数组。</p><p>因此我们可以首先从最左侧出发，依次累乘数组中所有的元素，在遇到0的时候，清空之前保存的乘积记录从1重新开始（相当于把子数组的左端移动到0的位置）<br>再从最右侧出发，遍历从右端开始的乘积。</p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxProduct</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>    <span class="hljs-keyword">if</span>(n == <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>    <span class="hljs-type">int</span> <span class="hljs-variable">product</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0xffffffff</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        product *= nums[i];<br>        ans = Math.max(ans, product);<br>        <span class="hljs-keyword">if</span>(nums[i] == <span class="hljs-number">0</span>)&#123;<br>            product = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    product = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--)&#123;<br>        product *= nums[i];<br>        ans = Math.max(ans, product);<br>        <span class="hljs-keyword">if</span>(nums[i] == <span class="hljs-number">0</span>)&#123;<br>            product = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Leetcode Medium</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Leetcode 443 string compression</title>
     <link href="/2024/11/26/leetcode-443-string-compression/"/>
     <url>/2024/11/26/leetcode-443-string-compression/</url>
