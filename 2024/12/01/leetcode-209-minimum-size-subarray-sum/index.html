@@ -19,24 +19,22 @@
   <meta name="author" content="Qile Wu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目重述给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。   输入： matrix &#x3D; [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]输出： [[15,13,2,5],[14,3,4,1],[1">
+    <meta name="description" content="题目重述给定一个含有 n 个正整数的数组和一个正整数 target 。 找出该数组中满足其总和大于等于 target 的长度最小的子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。  输入：target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]输出：2解释：子数组 [4,3] 是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 48 rotate image">
-<meta property="og:url" content="http://example.com/2024/11/30/leetcode-48-rotate-image/index.html">
+<meta property="og:title" content="leetcode-209-minimum-size-subarray-sum">
+<meta property="og:url" content="http://example.com/2024/12/01/leetcode-209-minimum-size-subarray-sum/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目重述给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。 你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。   输入： matrix &#x3D; [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]输出： [[15,13,2,5],[14,3,4,1],[1">
+<meta property="og:description" content="题目重述给定一个含有 n 个正整数的数组和一个正整数 target 。 找出该数组中满足其总和大于等于 target 的长度最小的子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。  输入：target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]输出：2解释：子数组 [4,3] 是">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/leetcode-48-rotate-image-mat2.jpg">
-<meta property="article:published_time" content="2024-11-30T09:38:54.000Z">
-<meta property="article:modified_time" content="2024-11-30T10:10:38.362Z">
+<meta property="article:published_time" content="2024-12-01T13:26:53.000Z">
+<meta property="article:modified_time" content="2024-12-01T13:34:01.378Z">
 <meta property="article:author" content="Qile Wu">
 <meta property="article:tag" content="Leetcode Medium">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/leetcode-48-rotate-image-mat2.jpg">
   
   
   
-  <title>leetcode 48 rotate image - Hexo</title>
+  <title>leetcode-209-minimum-size-subarray-sum - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="leetcode 48 rotate image"></span>
+            <span id="subtitle" data-typed-text="leetcode-209-minimum-size-subarray-sum"></span>
           
         </div>
 
@@ -213,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-30 17:38" pubdate>
-          November 30, 2024 pm
+        <time datetime="2024-12-01 21:26" pubdate>
+          December 1, 2024 pm
         </time>
       </span>
     
@@ -225,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          778 words
+          306 words
         
       </span>
     
@@ -236,7 +234,7 @@
         
         
         
-          7 mins
+          3 mins
         
       </span>
     
@@ -273,35 +271,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">leetcode 48 rotate image</h1>
+            <h1 id="seo-header">leetcode-209-minimum-size-subarray-sum</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给定一个 <code>n × n</code> 的二维矩阵 <code>matrix</code> 表示一个图像。请你将图像顺时针旋转 90 度。</p>
-<p>你必须在 <code>原地</code> 旋转图像，这意味着你需要直接修改输入的二维矩阵。<strong>请不要</strong> 使用另一个矩阵来旋转图像。</p>
-<p><img src="/img/leetcode-48-rotate-image-mat2.jpg" srcset="/img/loading.gif" lazyload alt="示例"></p>
+                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。</p>
+<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的<br>子数组<br> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度。如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
 <blockquote>
-<p><strong>输入：</strong> matrix &#x3D; [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]<br><strong>输出：</strong> [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]</p>
+<p><strong>输入：</strong>target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]<br><strong>输出：</strong>2<br><strong>解释：</strong>子数组 <code>[4,3]</code> 是该条件下的长度最小的子数组。</p>
 </blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><em><strong>寻找交换过程中的循环不变量</strong></em><br>修改一个矩阵之中的元素，一般需要双重循环，通常我们将i作为横坐标，j作为纵坐标，于是，我们可以首先写出如下的代码框架：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">rotate</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> matrix.length;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i; j &lt; n - i - <span class="hljs-number">1</span>; j++)&#123;<br>            <span class="hljs-comment">//这里放旋转矩阵的处理逻辑</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>为什么是n-1和n-i-1而不是n和n-i？这里和每个人的处理逻辑有关，我的思路是按照“一圈一圈”的规则去处理，对于每一行的最后一个元素（即n-1还有n-i-1），在处理0和i的时候已经被交换过了。</p>
-<p>那么问题在于，如何处理这个<code>旋转90度的操作</code>？</p>
-<p>首先我们从一般情况看起，对于示例的矩阵，<br><code>(i,j)</code>代表矩阵元素<code>matrix[i][j]</code></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>看到子数组问题，可以往两个方向去想：前缀和或者滑动窗口。<br>本题也可以使用前缀和来解决，但是会额外消耗O(n)的空间。<br>这里选择维护一个长度为j - i的滑动窗口。</p>
 <ul>
-<li>第一次交换： (<strong>0</strong>,0) -&gt; (3,0), (3,<strong>0</strong>) -&gt; (3,3), (<strong>3</strong>,3) -&gt; (0,3), (0,<strong>3</strong>) -&gt; (0,0)</li>
-<li>第二次交换： (<strong>0</strong>,1) -&gt; (2,0), (2,<strong>0</strong>) -&gt; (3,2), (<strong>3</strong>,2) -&gt; (1,3), (1,<strong>3</strong>) -&gt; (0,1)</li>
-<li>第三次交换： (<strong>0</strong>,2) -&gt; (1,0), (1,<strong>0</strong>) -&gt; (3,1), (<strong>3</strong>,1) -&gt; (2,3), (2,<strong>3</strong>) -&gt; (0,2)</li>
+<li>首先j从0出发，每遇到一个元素就累加一次子数组之和。</li>
+<li>直到子数组之和大于目标值，记录目前子数组的长度</li>
+<li>从i开头删减元素，再次记录子数组的长度</li>
+<li>最后返回最短子数组的长度</li>
 </ul>
-<p>可以直观地看到，每一次交换，都涉及到4个元素，每一轮交换，则与j的循环次数有关。除此之外呢？</p>
-<blockquote>
-<p><strong>一次交换：</strong> 例如涉及到的4个元素按照要求进行90度旋转，被称为一次交换<br><strong>一轮交换：</strong> 这一行所有的元素都进行过交换之后，则被称为一轮交换</p>
-</blockquote>
-<p>我们可以看到，在每一次交换中，总有一部分坐标是不会发生改变的，这一部分坐标就是我们要求寻找的循环不变量，它在一轮交换中不发生改变，仅仅在外层循环改变的时候，才会发生变动。<br>这个时候，我们就可以比较容易的知道，与i有关的参数，就是本轮交换中的不变量，我们把握好这一部分不变量，就可以写出相应的代码了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//一次交换的相应逻辑</span><br>matrix[i][j] = matrix[n - j - <span class="hljs-number">1</span>][i];<br>matrix[n - j - <span class="hljs-number">1</span>][i] = matrix[n - i - <span class="hljs-number">1</span>][n - j - <span class="hljs-number">1</span>];<br>matrix[n - i - <span class="hljs-number">1</span>][n - j - <span class="hljs-number">1</span>] = matrix[j][n - i - <span class="hljs-number">1</span>];<br>matrix[j][n - i - <span class="hljs-number">1</span>] = tmp;<br></code></pre></td></tr></table></figure>
-<p>题解：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">rotate</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> matrix.length;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i; j &lt; n - i - <span class="hljs-number">1</span>; j++)&#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> matrix[i][j];<br>            matrix[i][j] = matrix[n - j - <span class="hljs-number">1</span>][i];<br>            matrix[n - j - <span class="hljs-number">1</span>][i] = matrix[n - i - <span class="hljs-number">1</span>][n - j - <span class="hljs-number">1</span>];<br>            matrix[n - i - <span class="hljs-number">1</span>][n - j - <span class="hljs-number">1</span>] = matrix[j][n - i - <span class="hljs-number">1</span>];<br>            matrix[j][n - i - <span class="hljs-number">1</span>] = tmp;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-type">int</span> target, <span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0x7fffffff</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; nums.length; j ++)&#123;<br>        sum += nums[j];<br>        <span class="hljs-keyword">while</span>(sum &gt;= target)&#123;<br>            min = Math.min(min, j - i + <span class="hljs-number">1</span>);<br>            sum -= nums[i++];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> min==<span class="hljs-number">0x7fffffff</span>?<span class="hljs-number">0</span>:min;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -325,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>leetcode 48 rotate image</div>
-      <div>http://example.com/2024/11/30/leetcode-48-rotate-image/</div>
+      <div>leetcode-209-minimum-size-subarray-sum</div>
+      <div>http://example.com/2024/12/01/leetcode-209-minimum-size-subarray-sum/</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>November 30, 2024</div>
+          <div>December 1, 2024</div>
         </div>
       
       
@@ -370,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/01/leetcode-209-minimum-size-subarray-sum/" title="leetcode-209-minimum-size-subarray-sum">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">leetcode-209-minimum-size-subarray-sum</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/29/leetcode-152-maximum-product-subarray/" title="leetcode 152 maximum product subarray">
-                        <span class="hidden-mobile">leetcode 152 maximum product subarray</span>
+                      <a href="/2024/11/30/leetcode-48-rotate-image/" title="leetcode 48 rotate image">
+                        <span class="hidden-mobile">leetcode 48 rotate image</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

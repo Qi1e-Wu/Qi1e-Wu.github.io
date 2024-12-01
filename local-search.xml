@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>leetcode-209-minimum-size-subarray-sum</title>
+    <link href="/2024/12/01/leetcode-209-minimum-size-subarray-sum/"/>
+    <url>/2024/12/01/leetcode-209-minimum-size-subarray-sum/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。</p><p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的<br>子数组<br> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度。如果不存在符合条件的子数组，返回 <code>0</code> 。</p><blockquote><p><strong>输入：</strong>target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]<br><strong>输出：</strong>2<br><strong>解释：</strong>子数组 <code>[4,3]</code> 是该条件下的长度最小的子数组。</p></blockquote><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>看到子数组问题，可以往两个方向去想：前缀和或者滑动窗口。<br>本题也可以使用前缀和来解决，但是会额外消耗O(n)的空间。<br>这里选择维护一个长度为j - i的滑动窗口。</p><ul><li>首先j从0出发，每遇到一个元素就累加一次子数组之和。</li><li>直到子数组之和大于目标值，记录目前子数组的长度</li><li>从i开头删减元素，再次记录子数组的长度</li><li>最后返回最短子数组的长度</li></ul><p>代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-type">int</span> target, <span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0x7fffffff</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; nums.length; j ++)&#123;<br>        sum += nums[j];<br>        <span class="hljs-keyword">while</span>(sum &gt;= target)&#123;<br>            min = Math.min(min, j - i + <span class="hljs-number">1</span>);<br>            sum -= nums[i++];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> min==<span class="hljs-number">0x7fffffff</span>?<span class="hljs-number">0</span>:min;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Leetcode Medium</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>leetcode 48 rotate image</title>
     <link href="/2024/11/30/leetcode-48-rotate-image/"/>
     <url>/2024/11/30/leetcode-48-rotate-image/</url>
