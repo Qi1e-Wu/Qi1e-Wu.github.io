@@ -19,22 +19,22 @@
   <meta name="author" content="Qile Wu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目重述给定一个含有 n 个正整数的数组和一个正整数 target 。 找出该数组中满足其总和大于等于 target 的长度最小的子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。  输入：target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]输出：2解释：子数组 [4,3] 是">
+    <meta name="description" content="题目重述将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。 比如输入字符串为 &quot;PAYPALISHIRING&quot; 行数为 3 时，排列如下：  P   A   H   NA P L S I I GY   I   R之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：&quot;PAHNAPLSIIGYIR&quot;。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-209-minimum-size-subarray-sum">
-<meta property="og:url" content="http://example.com/2024/12/01/leetcode-209-minimum-size-subarray-sum/index.html">
+<meta property="og:title" content="leetcode-6-zigzag-conversion">
+<meta property="og:url" content="http://example.com/2024/12/02/leetcode-6-zigzag-conversion/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目重述给定一个含有 n 个正整数的数组和一个正整数 target 。 找出该数组中满足其总和大于等于 target 的长度最小的子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。  输入：target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]输出：2解释：子数组 [4,3] 是">
+<meta property="og:description" content="题目重述将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。 比如输入字符串为 &quot;PAYPALISHIRING&quot; 行数为 3 时，排列如下：  P   A   H   NA P L S I I GY   I   R之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：&quot;PAHNAPLSIIGYIR&quot;。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-01T13:26:53.000Z">
-<meta property="article:modified_time" content="2024-12-01T13:34:01.378Z">
+<meta property="article:published_time" content="2024-12-02T13:42:44.000Z">
+<meta property="article:modified_time" content="2024-12-02T13:57:17.776Z">
 <meta property="article:author" content="Qile Wu">
 <meta property="article:tag" content="Leetcode Medium">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>leetcode-209-minimum-size-subarray-sum - Hexo</title>
+  <title>leetcode-6-zigzag-conversion - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="leetcode-209-minimum-size-subarray-sum"></span>
+            <span id="subtitle" data-typed-text="leetcode-6-zigzag-conversion"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-01 21:26" pubdate>
-          December 1, 2024 pm
+        <time datetime="2024-12-02 21:42" pubdate>
+          December 2, 2024 pm
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          306 words
+          660 words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          3 mins
+          6 mins
         
       </span>
     
@@ -271,25 +271,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">leetcode-209-minimum-size-subarray-sum</h1>
+            <h1 id="seo-header">leetcode-6-zigzag-conversion</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。</p>
-<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的<br>子数组<br> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度。如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>将一个给定字符串 <code>s</code> 根据给定的行数 <code>numRows</code> ，以从上往下、从左到右进行 Z 字形排列。</p>
+<p>比如输入字符串为 <code>&quot;PAYPALISHIRING&quot;</code> 行数为 <code>3</code> 时，排列如下：</p>
 <blockquote>
-<p><strong>输入：</strong>target &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]<br><strong>输出：</strong>2<br><strong>解释：</strong>子数组 <code>[4,3]</code> 是该条件下的长度最小的子数组。</p>
+<p>P   A   H   N<br>A P L S I I G<br>Y   I   R<br>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：<code>&quot;PAHNAPLSIIGYIR&quot;。</code></p>
 </blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>看到子数组问题，可以往两个方向去想：前缀和或者滑动窗口。<br>本题也可以使用前缀和来解决，但是会额外消耗O(n)的空间。<br>这里选择维护一个长度为j - i的滑动窗口。</p>
-<ul>
-<li>首先j从0出发，每遇到一个元素就累加一次子数组之和。</li>
-<li>直到子数组之和大于目标值，记录目前子数组的长度</li>
-<li>从i开头删减元素，再次记录子数组的长度</li>
-<li>最后返回最短子数组的长度</li>
-</ul>
-<p>代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-type">int</span> target, <span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0x7fffffff</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; nums.length; j ++)&#123;<br>        sum += nums[j];<br>        <span class="hljs-keyword">while</span>(sum &gt;= target)&#123;<br>            min = Math.min(min, j - i + <span class="hljs-number">1</span>);<br>            sum -= nums[i++];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> min==<span class="hljs-number">0x7fffffff</span>?<span class="hljs-number">0</span>:min;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>输入：</strong>s &#x3D; “PAYPALISHIRING”, numRows &#x3D; 3<br><strong>输出：</strong>“PAHNAPLSIIGYIR”</p>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题本质上类似于一个<code>找规律</code>问题，从模拟的角度来讲，字符按照<code>z</code>字形排列，但是在构造返回字符串的时候，是按照行来增加字符的。<br>这就启示我们按照行来寻找规律；首先，我们为每个字符编号，例如对于<code>P</code>，我们将其编号为<code>0</code>。<br>对于之后的<code>A</code>，<code>H</code>，<code>N</code>，我们可以比较容易的为其编号为<code>4</code>，<code>8</code>，<code>12</code>。<br>对于第一行，我们推测它们的间隔均为<code>2 * numRows - 2</code>。<br>对于第二行，我们可以观察到每个字符间隔分别为2，2，2，2······。<br>对于numRows小于等于3的情况来讲，这个规律不明显，这里以一个numRows为4的案例进行展示：</p>
+<blockquote>
+<p><strong>输入：</strong>s &#x3D; “PAYPALISHIRING”, numRows &#x3D; 4<br><strong>输出：</strong>“PINALSIGYAHRPI”<br><strong>解释：</strong><br>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p>
+</blockquote>
+<p>对于第二行，每个字符之间的间隔为4，2，4，2，······<br>对于第三行，每个字符之间的间隔为2，4，2，4，······<br>我们推测每个字符的间隔呈现周期性变化，并且周期为2，周期的间隔之和等于最长间隔，即<strong>2 * numRows - 2</strong><br>除开第一行和最后一行，每一行的间隔都以2为步长进行递减，而且间隔在每一行的元素添加中<strong>保持不变</strong><br>因此我们可以分情况进行讨论：<strong>第一行+最后一行</strong>与<strong>其它部分</strong><br>对于第一行和最后一行，只要从0和numRows - 1的位置进行步长为<code>2 * numRows - 2</code>的遍历添加字符即可。<br>对于其余行，设置长度为2的间隔，每添加完一行，则初始步长则会相应减少2（从最长间隔开始递减）<br>每添加一个元素，步长就会变为最长间隔减去上一次步长，即<code>gap = maxLen - gap</code>。<br>代码实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> String <span class="hljs-title function_">convert</span><span class="hljs-params">(String s, <span class="hljs-type">int</span> numRows)</span> &#123;<br>    <span class="hljs-keyword">if</span>(numRows == <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> s;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> s.length();<br>    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>    <span class="hljs-type">int</span> <span class="hljs-variable">maxLeap</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span> * numRows - <span class="hljs-number">2</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">leap</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">gap</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i += maxLeap)&#123;<br>        sb.append(s.charAt(i));<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; numRows - <span class="hljs-number">1</span>; i++)&#123;<br>        leap += <span class="hljs-number">2</span>;<br>        gap = maxLeap - leap;<br>        gap = maxLeap - gap;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i;j &lt; n;j += gap)&#123;<br>            gap = maxLeap - gap;<br>            sb.append(s.charAt(j));<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> numRows - <span class="hljs-number">1</span>; i &lt; n; i += maxLeap)&#123;<br>        sb.append(s.charAt(i));<br>    &#125;<br>    <span class="hljs-keyword">return</span> sb.toString();<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -313,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>leetcode-209-minimum-size-subarray-sum</div>
-      <div>http://example.com/2024/12/01/leetcode-209-minimum-size-subarray-sum/</div>
+      <div>leetcode-6-zigzag-conversion</div>
+      <div>http://example.com/2024/12/02/leetcode-6-zigzag-conversion/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 1, 2024</div>
+          <div>December 2, 2024</div>
         </div>
       
       
@@ -358,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/02/leetcode-6-zigzag-conversion/" title="leetcode-6-zigzag-conversion">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">leetcode-6-zigzag-conversion</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/30/leetcode-48-rotate-image/" title="leetcode 48 rotate image">
-                        <span class="hidden-mobile">leetcode 48 rotate image</span>
+                      <a href="/2024/12/01/leetcode-209-minimum-size-subarray-sum/" title="leetcode-209-minimum-size-subarray-sum">
+                        <span class="hidden-mobile">leetcode-209-minimum-size-subarray-sum</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
