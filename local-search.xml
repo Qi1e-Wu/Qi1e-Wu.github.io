@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>leetcode-135-candy</title>
+    <link href="/2024/12/03/leetcode-135-candy/"/>
+    <url>/2024/12/03/leetcode-135-candy/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p><code>n</code> 个孩子站成一排。给你一个整数数组 <code>ratings</code> 表示每个孩子的评分。</p><p>你需要按照以下要求，给这些孩子分发糖果：</p><ul><li>每个孩子至少分配到 1 个糖果。</li><li>相邻两个孩子评分更高的孩子会获得更多的糖果。<br>请你给每个孩子分发糖果，计算并返回需要准备的 <strong>最少糖果数目</strong> 。</li></ul><blockquote><p><strong>输入：</strong>ratings &#x3D; [1,0,2]<br><strong>输出：</strong>5<br><strong>解释：</strong>你可以分别给第一个、第二个、第三个孩子分发 2、1、2 颗糖果。</p></blockquote><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>开辟一个新的数组，用于存放每个孩子拿到的糖果数，然后遍历收集。<br>首先讲新的数组初始化为全1。<br>注意到题目中提到<strong>相邻</strong>两个孩子，评分更高的将会得到更多的糖果，假设三个相邻的孩子分别为i,j,k。那么就有<code>candy[i] &lt;= candy[j] &amp;&amp; candy[j] &gt;= candy[k]</code>。<br>但是同时满足两个条件过于苛刻，而且在数组更新的过程中，左边或者右边的糖果数也会发生变化。<br>那么在一次遍历中，只考虑一边，求出满足<code>candy[i] &lt;= candy[j]</code>或者<code>candy[j] &gt;= candy[k]</code>。<br>遇到评分较大者，在左边（或者右边）孩子的糖果数上+1即可。<br>随后，我们得到了满足大于右边的数组一个，大于左边的数组一个。<br>遍历这两个数组，取其中较大值即为满足条件的最小值。<br>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">candy</span><span class="hljs-params">(<span class="hljs-type">int</span>[] ratings)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> ratings.length;<br>    <span class="hljs-type">int</span>[] rightCandy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    <span class="hljs-type">int</span>[] leftCandy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        rightCandy[i] = leftCandy[i] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++)&#123;<br>        <span class="hljs-keyword">if</span>(ratings[i] &gt; ratings[i - <span class="hljs-number">1</span>])&#123;<br>            leftCandy[i] = leftCandy[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--)&#123;<br>        <span class="hljs-keyword">if</span>(ratings[i] &gt; ratings[i + <span class="hljs-number">1</span>])&#123;<br>            rightCandy[i] = rightCandy[i + <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        ans += Math.max(rightCandy[i],leftCandy[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Leetcode Hard</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>leetcode-6-zigzag-conversion</title>
     <link href="/2024/12/02/leetcode-6-zigzag-conversion/"/>
     <url>/2024/12/02/leetcode-6-zigzag-conversion/</url>
