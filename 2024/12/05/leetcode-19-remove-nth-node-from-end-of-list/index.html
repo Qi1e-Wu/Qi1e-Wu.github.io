@@ -19,22 +19,23 @@
   <meta name="author" content="Qile Wu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目重述n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的评分。 你需要按照以下要求，给这些孩子分发糖果：  每个孩子至少分配到 1 个糖果。 相邻两个孩子评分更高的孩子会获得更多的糖果。请你给每个孩子分发糖果，计算并返回需要准备的 最少糖果数目 。   输入：ratings &#x3D; [1,0,2]输出：5解释：你可以分别给第一个、第二个、第三个孩子分发 2、1、2 颗糖果">
+    <meta name="description" content="题目重述给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。  输入：head &#x3D; [1,2,3,4,5], n &#x3D; 2输出：[1,2,3,5]  思路这道题在408的数据结构考题中出现过，如果仅仅使用一次遍历就完成操作，即可获得满分（当然这里不用考虑n大于链表长度的问题）。这里考虑使用快慢指针来解决问题，首先定义虚拟节点dummy，快指针先走n步，慢指针随后和快">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-135-candy">
-<meta property="og:url" content="http://example.com/2024/12/03/leetcode-135-candy/index.html">
+<meta property="og:title" content="leetcode-19-remove-nth-node-from-end-of-list">
+<meta property="og:url" content="http://example.com/2024/12/05/leetcode-19-remove-nth-node-from-end-of-list/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目重述n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的评分。 你需要按照以下要求，给这些孩子分发糖果：  每个孩子至少分配到 1 个糖果。 相邻两个孩子评分更高的孩子会获得更多的糖果。请你给每个孩子分发糖果，计算并返回需要准备的 最少糖果数目 。   输入：ratings &#x3D; [1,0,2]输出：5解释：你可以分别给第一个、第二个、第三个孩子分发 2、1、2 颗糖果">
+<meta property="og:description" content="题目重述给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。  输入：head &#x3D; [1,2,3,4,5], n &#x3D; 2输出：[1,2,3,5]  思路这道题在408的数据结构考题中出现过，如果仅仅使用一次遍历就完成操作，即可获得满分（当然这里不用考虑n大于链表长度的问题）。这里考虑使用快慢指针来解决问题，首先定义虚拟节点dummy，快指针先走n步，慢指针随后和快">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-03T13:19:30.000Z">
-<meta property="article:modified_time" content="2024-12-03T13:31:40.291Z">
+<meta property="og:image" content="http://example.com/img/leetcode-19-remove-nth-node-from-end-of-list-remove_ex1.jpg">
+<meta property="article:published_time" content="2024-12-05T14:43:34.000Z">
+<meta property="article:modified_time" content="2024-12-05T14:47:45.350Z">
 <meta property="article:author" content="Qile Wu">
-<meta property="article:tag" content="Leetcode Hard">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/leetcode-19-remove-nth-node-from-end-of-list-remove_ex1.jpg">
   
   
   
-  <title>leetcode-135-candy - Hexo</title>
+  <title>leetcode-19-remove-nth-node-from-end-of-list - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="leetcode-135-candy"></span>
+            <span id="subtitle" data-typed-text="leetcode-19-remove-nth-node-from-end-of-list"></span>
           
         </div>
 
@@ -211,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-03 21:19" pubdate>
-          December 3, 2024 pm
+        <time datetime="2024-12-05 22:43" pubdate>
+          December 5, 2024 pm
         </time>
       </span>
     
@@ -223,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          494 words
+          221 words
         
       </span>
     
@@ -234,7 +235,7 @@
         
         
         
-          5 mins
+          2 mins
         
       </span>
     
@@ -271,22 +272,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">leetcode-135-candy</h1>
+            <h1 id="seo-header">leetcode-19-remove-nth-node-from-end-of-list</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p><code>n</code> 个孩子站成一排。给你一个整数数组 <code>ratings</code> 表示每个孩子的评分。</p>
-<p>你需要按照以下要求，给这些孩子分发糖果：</p>
-<ul>
-<li>每个孩子至少分配到 1 个糖果。</li>
-<li>相邻两个孩子评分更高的孩子会获得更多的糖果。<br>请你给每个孩子分发糖果，计算并返回需要准备的 <strong>最少糖果数目</strong> 。</li>
-</ul>
+                <h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给你一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。<br><img src="/img/leetcode-19-remove-nth-node-from-end-of-list-remove_ex1.jpg" srcset="/img/loading.gif" lazyload alt="示例"></p>
 <blockquote>
-<p><strong>输入：</strong>ratings &#x3D; [1,0,2]<br><strong>输出：</strong>5<br><strong>解释：</strong>你可以分别给第一个、第二个、第三个孩子分发 2、1、2 颗糖果。</p>
+<p><strong>输入：</strong>head &#x3D; [1,2,3,4,5], n &#x3D; 2<br><strong>输出：</strong>[1,2,3,5]</p>
 </blockquote>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>开辟一个新的数组，用于存放每个孩子拿到的糖果数，然后遍历收集。<br>首先讲新的数组初始化为全1。<br>注意到题目中提到<strong>相邻</strong>两个孩子，评分更高的将会得到更多的糖果，假设三个相邻的孩子分别为i,j,k。那么就有<code>candy[i] &lt;= candy[j] &amp;&amp; candy[j] &gt;= candy[k]</code>。<br>但是同时满足两个条件过于苛刻，而且在数组更新的过程中，左边或者右边的糖果数也会发生变化。<br>那么在一次遍历中，只考虑一边，求出满足<code>candy[i] &lt;= candy[j]</code>或者<code>candy[j] &gt;= candy[k]</code>。<br>遇到评分较大者，在左边（或者右边）孩子的糖果数上+1即可。<br>随后，我们得到了满足大于右边的数组一个，大于左边的数组一个。<br>遍历这两个数组，取其中较大值即为满足条件的最小值。<br>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">candy</span><span class="hljs-params">(<span class="hljs-type">int</span>[] ratings)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> ratings.length;<br>    <span class="hljs-type">int</span>[] rightCandy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    <span class="hljs-type">int</span>[] leftCandy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        rightCandy[i] = leftCandy[i] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++)&#123;<br>        <span class="hljs-keyword">if</span>(ratings[i] &gt; ratings[i - <span class="hljs-number">1</span>])&#123;<br>            leftCandy[i] = leftCandy[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--)&#123;<br>        <span class="hljs-keyword">if</span>(ratings[i] &gt; ratings[i + <span class="hljs-number">1</span>])&#123;<br>            rightCandy[i] = rightCandy[i + <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        ans += Math.max(rightCandy[i],leftCandy[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题在408的数据结构考题中出现过，如果仅仅使用一次遍历就完成操作，即可获得满分（当然这里不用考虑n大于链表长度的问题）。<br>这里考虑使用快慢指针来解决问题，首先定义虚拟节点dummy，快指针先走n步，慢指针随后和快指针一起移动，直到快指针指向最后一个节点。<br>慢指针删除下一个指针即可。<br>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">removeNthFromEnd</span><span class="hljs-params">(ListNode head, <span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-type">ListNode</span> <span class="hljs-variable">dummy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(-<span class="hljs-number">1</span>,head);<br>    <span class="hljs-type">ListNode</span> <span class="hljs-variable">fast</span> <span class="hljs-operator">=</span> dummy, slow = dummy;<br>    <span class="hljs-keyword">while</span>(n-- &gt; <span class="hljs-number">0</span>)&#123;<br>        fast = fast.next;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(fast.next != <span class="hljs-literal">null</span>)&#123;<br>        fast = fast.next;<br>        slow = slow.next;<br>    &#125;<br>    slow.next = slow.next.next;<br>    <span class="hljs-keyword">return</span> dummy.next;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -294,13 +290,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Leetcode-Hard/" class="print-no-link">#Leetcode Hard</a>
-      
-    </div>
   
 </div>
 
@@ -310,8 +299,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>leetcode-135-candy</div>
-      <div>http://example.com/2024/12/03/leetcode-135-candy/</div>
+      <div>leetcode-19-remove-nth-node-from-end-of-list</div>
+      <div>http://example.com/2024/12/05/leetcode-19-remove-nth-node-from-end-of-list/</div>
     </div>
     <div class="license-meta">
       
@@ -323,7 +312,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 3, 2024</div>
+          <div>December 5, 2024</div>
         </div>
       
       
@@ -355,18 +344,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/05/leetcode-19-remove-nth-node-from-end-of-list/" title="leetcode-19-remove-nth-node-from-end-of-list">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">leetcode-19-remove-nth-node-from-end-of-list</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/02/leetcode-6-zigzag-conversion/" title="leetcode-6-zigzag-conversion">
-                        <span class="hidden-mobile">leetcode-6-zigzag-conversion</span>
+                      <a href="/2024/12/03/leetcode-135-candy/" title="leetcode-135-candy">
+                        <span class="hidden-mobile">leetcode-135-candy</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

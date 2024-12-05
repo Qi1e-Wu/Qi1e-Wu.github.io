@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>leetcode-19-remove-nth-node-from-end-of-list</title>
+    <link href="/2024/12/05/leetcode-19-remove-nth-node-from-end-of-list/"/>
+    <url>/2024/12/05/leetcode-19-remove-nth-node-from-end-of-list/</url>
+    
+    <content type="html"><![CDATA[<h1 id="题目重述"><a href="#题目重述" class="headerlink" title="题目重述"></a>题目重述</h1><p>给你一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。<br><img src="/img/leetcode-19-remove-nth-node-from-end-of-list-remove_ex1.jpg" alt="示例"></p><blockquote><p><strong>输入：</strong>head &#x3D; [1,2,3,4,5], n &#x3D; 2<br><strong>输出：</strong>[1,2,3,5]</p></blockquote><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题在408的数据结构考题中出现过，如果仅仅使用一次遍历就完成操作，即可获得满分（当然这里不用考虑n大于链表长度的问题）。<br>这里考虑使用快慢指针来解决问题，首先定义虚拟节点dummy，快指针先走n步，慢指针随后和快指针一起移动，直到快指针指向最后一个节点。<br>慢指针删除下一个指针即可。<br>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">removeNthFromEnd</span><span class="hljs-params">(ListNode head, <span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-type">ListNode</span> <span class="hljs-variable">dummy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(-<span class="hljs-number">1</span>,head);<br>    <span class="hljs-type">ListNode</span> <span class="hljs-variable">fast</span> <span class="hljs-operator">=</span> dummy, slow = dummy;<br>    <span class="hljs-keyword">while</span>(n-- &gt; <span class="hljs-number">0</span>)&#123;<br>        fast = fast.next;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(fast.next != <span class="hljs-literal">null</span>)&#123;<br>        fast = fast.next;<br>        slow = slow.next;<br>    &#125;<br>    slow.next = slow.next.next;<br>    <span class="hljs-keyword">return</span> dummy.next;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>leetcode-135-candy</title>
     <link href="/2024/12/03/leetcode-135-candy/"/>
     <url>/2024/12/03/leetcode-135-candy/</url>
